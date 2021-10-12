@@ -77,13 +77,13 @@ async def all(event):
       break
     usrnum += 1
     usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
-    if usrnum == 5:
+    if usrnum == 20:
       if mode == "text_on_cmd":
         txt = f"{usrtxt}\n\n{msg}"
         await client.send_message(chat_id, txt)
       elif mode == "text_on_reply":
         await msg.reply(usrtxt)
-      await asyncio.sleep(2)
+      await asyncio.sleep(0.2)
       usrnum = 0
       usrtxt = ''
   try:
